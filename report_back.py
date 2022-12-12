@@ -10,6 +10,7 @@
 """
 
 import json
+import os
 from datetime import datetime
 
 import requests
@@ -96,20 +97,33 @@ def report_back(ss: requests.Session, id: str, is_ug: bool) -> None:
 
 
 if __name__ == '__main__':
-    # 读取配置文件：
-    with open('config.json', 'r', encoding='utf-8') as f:
-        config = json.load(f)
+    # # 读取配置文件：
+    # with open('config.json', 'r', encoding='utf-8') as f:
+    #     config = json.load(f)
+
+    # 读取环境变量：
+    id = os.environ['ID']
+    password = os.environ['PASSWORD']
+    if os.environ['IS_UG'] == 'true':
+        is_ug = True
+    else:
+        is_ug = False
+    print('ID: %s' % id)
+    print('Password: %s' % password)
+    print('Is undergraduate: %s' % is_ug)
 
     # 登录：
     try:
-        ss = login_ehall(config['id'], config['password'])
+        # ss = login_ehall(config['id'], config['password'])
+        ss = login_ehall(id, password)
     except Exception as e:
         print(e)
         exit(-1)
 
     # 销假：
     try:
-        report_back(ss, config['id'], config['undergraduate'])
+        # report_back(ss, config['id'], config['undergraduate'])
+        report_back(ss, id, is_ug)
     except Exception as e:
         print(e)
         exit(-1)

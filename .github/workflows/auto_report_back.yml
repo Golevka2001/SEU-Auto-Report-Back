@@ -1,0 +1,26 @@
+name: auto report back
+
+on:
+  schedule:
+    - cron: '47 14 * * *' # 每天的22:47执行（UTC时间，另外GitHub Actions出现延后是正常的）
+  workflow_dispatch:
+
+jobs:
+  report_back:
+    runs-on: ubuntu-latest
+    # env:
+    #   ID: ${{ secrets.ID }}
+    #   PASSWORD: ${{ secrets.PASSWORD }}
+    #   IS_UG: ${{ secrets.IS_UG }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install -r ./requirements.txt
+      - name: report back
+        run: python ./report_back.py
