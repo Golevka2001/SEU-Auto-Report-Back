@@ -3,8 +3,8 @@ name: auto report back
 on:
   # 定时器触发：
   schedule:
-    # 每天的22:47执行（UTC时间，另外GitHub Actions出现延后是正常的）
-    - cron: '47 14 * * *'
+    # 每天的23:17执行（UTC时间，尽量不要采用整点而是较为随意的时间，且出现延后是正常的）
+    - cron: '17 15 * * *'
   # 手动触发：
   workflow_dispatch:
 
