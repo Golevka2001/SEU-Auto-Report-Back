@@ -16,7 +16,7 @@
   - [目录](#目录)
   - [安全性](#安全性)
   - [使用说明](#使用说明)
-    - [【推荐】使用 GitHub Actions 在线部署](#推荐使用-github-actions-在线部署)
+    - [【:fire:推荐】使用 GitHub Actions 在线部署](#fire推荐使用-github-actions-在线部署)
       - [1. Fork 到个人仓库](#1-fork-到个人仓库)
       - [2. 变量配置](#2-变量配置)
       - [3. 检查 workflow 能否正常运行](#3-检查-workflow-能否正常运行)
@@ -42,7 +42,7 @@
 
 ## 使用说明
 
-### 【推荐】使用 GitHub Actions 在线部署
+### 【:fire:推荐】使用 GitHub Actions 在线部署
 
 #### 1. Fork 到个人仓库
 
