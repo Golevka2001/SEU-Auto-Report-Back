@@ -1,7 +1,7 @@
 #!user/bin/env python
 # -*- coding:utf-8 -*-
 """SEU-Auto-Report-Back:
-    自动销假脚本，每日定时检查并销假
+    自动销假脚本，每日定时检查并销假，支持GitHub Actions在线部署
 @File: encrypt.py
 @Brief: 登录过程中需要对密码进行加密，调用encrypt.js
 @From: https://github.com/luzy99/SEUAutoLogin，有部分改动

@@ -1,8 +1,11 @@
 name: auto report back
 
 on:
+  # 定时器触发：
   schedule:
-    - cron: '47 14 * * *' # 每天的22:47执行（UTC时间，另外GitHub Actions出现延后是正常的）
+    # 每天的22:47执行（UTC时间，另外GitHub Actions出现延后是正常的）
+    - cron: '47 14 * * *'
+  # 手动触发：
   workflow_dispatch:
 
 jobs:
@@ -22,5 +25,5 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: pip install -r ./requirements.txt
-      - name: report back
+      - name: Report back
         run: python ./report_back.py

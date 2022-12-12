@@ -1,7 +1,7 @@
 #!user/bin/env python
 # -*- coding:utf-8 -*-
 """SEU-Auto-Report-Back:
-    自动销假脚本，每日定时检查并销假
+    自动销假脚本，每日定时检查并销假，支持GitHub Actions在线部署
 @File: report_back.py
 @Brief: 调用login.py登录后进行销假
 @Author: Golevka2001<gol3vka@163.com>
@@ -97,6 +97,11 @@ def report_back(ss: requests.Session, id: str, is_ug: bool) -> None:
 
 
 if __name__ == '__main__':
+    """
+    当前使用GitHub Actions在线部署，无需使用config.json写入个人信息。
+    如果需要在本地运行，自行修改以下注释部分，将参数改为从配置文件读取，并编辑配置文件。
+    """
+
     # # 读取配置文件：
     # with open('config.json', 'r', encoding='utf-8') as f:
     #     config = json.load(f)
@@ -108,9 +113,6 @@ if __name__ == '__main__':
         is_ug = True
     else:
         is_ug = False
-    print('ID: %s' % id)
-    print('Password: %s' % password)
-    print('Is undergraduate: %s' % is_ug)
 
     # 登录：
     try:
